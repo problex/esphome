@@ -33,7 +33,6 @@ CONFIG_SCHEMA = cv.All(
 async def to_code(config):
     var = cg.new_Pvariable(config[CONF_ID])
 
-    await cg.register_component(var, config)
     await display.register_display(var, config)
 
     cg.add(var.set_full_update_every(config[CONF_FULL_UPDATE_EVERY]))
